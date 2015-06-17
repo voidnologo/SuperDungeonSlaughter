@@ -2,6 +2,7 @@ import random
 import math
 from inventory import Inventory
 
+
 class Hero(object):
     def __init__(self, name):
         self.name = name
@@ -13,7 +14,7 @@ class Hero(object):
         self.heal_min = 2
         self.heal_max = 4
         self.level_kills = 0
-        self.total_kills = 0 
+        self.total_kills = 0
         self.inventory = Inventory()
 
     def fight(self):
@@ -29,7 +30,7 @@ class Hero(object):
     #     # self.inventory = {"inventory" : "stuff"}
     #     # print(self.inventory)
     #     for i in self.inventory:
-    #         print (i) 
+    #         print (i)
 
     # def add_item_to_inventory(self, item):
     #     self.inventory[item.name] = item
@@ -56,21 +57,21 @@ class Hero(object):
         self.hp += heal
         if (self.hp > self.hp_max):
             self.hp = self.hp_max
-            
+
         return (heal)
 
     def level_up(self):
         self.level += 1
         self.hp_max += self.level
         self.level_kills = 0
-        
+
         if (self.damage_min == 0): #handle leveling to level 1
             self.damage_min = 1
         else:
             self.damage_min += int(math.ceil(self.damage_min * .1))
-        
+
         self.damage_max += int(math.ceil(self.damage_max * .1))
-        
+
         self.heal_min += int(math.ceil(self.heal_min * .1))
         self.heal_max += int(math.ceil(self.heal_max * .1))
 
@@ -86,6 +87,7 @@ class Hero(object):
                  "\t Max Hit points: " + str(self.hp_max) + \
                  "\t Damage: " + str(self.damage_min) + " - " + str(self.damage_max) +\
                  "\t Rest: " + str(self.heal_min) + " - " + str(self.heal_max))
+        print ("\tName: {}\t Level: {}\t Max Hit points: {}\t Damage: {}-{}\t Rest: {}-{}")
 
 
 
