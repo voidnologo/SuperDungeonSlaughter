@@ -4,9 +4,9 @@ class Inventory(object):
 
     def show_inventory(self):
         # self.inventory = {"inventory" : "stuff"}
-        index = 0 
+        index = 0
         for i in self.inventory:
-            print ("[" + str(index) + "] " + i.name) 
+            print ("[" + str(index) + "] " + i.name)
 
     def add_item_to_inventory(self, item):
         self.inventory.append(item)

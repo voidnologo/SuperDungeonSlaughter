@@ -12,7 +12,6 @@ class Item(object):
         # for i in self.actor:
         #     print ("\t" + i, end='')
         # print("\n")
-        
 
     def effect(self):
         pass

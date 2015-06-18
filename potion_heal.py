@@ -1,12 +1,13 @@
 from item import Item
 from hero import Hero
 
+
 class Potion_heal(Item):
     def __init__(self):
         super().__init__("Healing Potion", "potion", (Hero))
         self.attributes = ["one_shot"]
 
-    def details (self):
+    def details(self):
         super().details()
         print ("Action: Heals the hero for 50% hp")
 

@@ -65,7 +65,7 @@ class Hero(object):
         self.hp_max += self.level
         self.level_kills = 0
 
-        if (self.damage_min == 0): #handle leveling to level 1
+        if (self.damage_min == 0):  # handle leveling to level 1
             self.damage_min = 1
         else:
             self.damage_min += int(math.ceil(self.damage_min * .1))
@@ -76,19 +76,12 @@ class Hero(object):
         self.heal_max += int(math.ceil(self.heal_max * .1))
 
         print("\nYou gained a level!\n")
-        print("\t You are now level: " + str(self.level))
-        print("\t You now have " + str(self.hp_max) + " max hp.")
-        print("\t You deal " + str(self.damage_min) + " - " + str(self.damage_max) + " points of damage.")
-        print("\t You heal " + str(self.heal_min) + " - " + str(self.heal_max) + " points when resting.\n")
+        print("\t You are now level: {}".format(self.level))
+        print("\t You now have {} max hp.".format(self.hp_max))
+        print("\t You deal {} - {} points of damage.".format(self.damage_min, self.damage_max))
+        print("\t You heal {} - {} points when resting.".format(self.heal_min, self.heal_max))
 
     def details(self):
-        print ("\tName: " + self.name + \
-                 "\t Level: " + str(self.level) + \
-                 "\t Max Hit points: " + str(self.hp_max) + \
-                 "\t Damage: " + str(self.damage_min) + " - " + str(self.damage_max) +\
-                 "\t Rest: " + str(self.heal_min) + " - " + str(self.heal_max))
-        print ("\tName: {}\t Level: {}\t Max Hit points: {}\t Damage: {}-{}\t Rest: {}-{}")
-
-
-
-
+        print ("\tName: {}\t Level: {}\t Max Hit points: {}\t Damage: {}-{}\t Rest: {}-{}".format(
+            self.name, self.level, self.hp_max, self.damage_min, self.damage_max, self.heal_min, self.heal_max
+        ))
