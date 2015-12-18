@@ -1,20 +1,19 @@
 # import random
 
 from hero import Hero
-# from monster import Monster
 from commands import Commands
 from game_object import GameObject
 from bestiary import Bestiary
 from colors import bcolors
-# import sys
-# from item import Item
 from potion_heal import Potion_heal
 
-###initialize game
+
+# initialize game
 command_obj = Commands()
 bestiary = Bestiary("monsters.txt")
 
-def getInput ():
+
+def getInput():
   if (game_obj.HERO.hp / game_obj.HERO.hp_max) > 0.66:
      hp_color = bcolors.FG_BOLD_GREEN
   elif (game_obj.HERO.hp / game_obj.HERO.hp_max) > 0.33:
@@ -57,7 +56,7 @@ new_monster = bestiary.get_monster_from_bestiary_by_level(new_hero.level)
 
 
 #while (new_monster.min_level > new_hero.level):    #get a new new_monster if too high level
-#    new_monster = bestiary.get_monster_from_bestiary() 
+#    new_monster = bestiary.get_monster_from_bestiary()
 
 
 ### check variables, introduce battle
@@ -98,7 +97,7 @@ while (fight):
 
         # while ((game_obj.MONSTER.min_level > game_obj.HERO.level) and (game_obj.MONSTER.max_level < game_obj.HERO.level)):    #get a new monster if too high level
         # while (game_obj.MONSTER.min_level > game_obj.HERO.level):    #get a new monster if too high level
-        game_obj.MONSTER = bestiary.get_monster_from_bestiary_by_level(game_obj.HERO.level) 
+        game_obj.MONSTER = bestiary.get_monster_from_bestiary_by_level(game_obj.HERO.level)
 
         if (not game_obj.HERO.level_kills % game_obj.HERO.level):
             game_obj.HERO.level_up()
