@@ -32,6 +32,8 @@ class Monster(object):
         self.hp -= damage
 
     def details(self):
-        print ("\tType: {}\t Hit points: {}\t Damage: {}\t Min Level: {}\t Max Level: {}".format(
-            self.name, self.hp_min, self.hp_max, self.damage_min, self.damage_max, self.min_level, self.max_level
-        ))
+        print(
+            "\tType: {}\t Hit points: {}\t Damage: {}\t Min Level: {}\t Max Level: {}".format(
+                self.name, self.hp_min, self.hp_max, self.damage_min, self.damage_max, self.min_level, self.max_level
+            )
+        )

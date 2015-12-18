@@ -1,5 +1,4 @@
 class Commands(object):
-
     def __init__(self):
         self.commands = {
             'fight': 'Attack!',
@@ -19,20 +18,20 @@ class Commands(object):
         }
 
     def listCommands(self):
-        return(self.commands)
+        return (self.commands)
 
     def showCommands(self):
         for key in sorted(self.commands):
-            print ("\t" + key + "\t" + self.commands[key])
+            print("\t" + key + "\t" + self.commands[key])
 
     def validateCommand(self, inp):
         cmd = inp.strip().split(":")
         command = cmd.pop(0)
 
         if (command in self.commands):
-            return(True)
+            return (True)
         else:
-            return(False)
+            return (False)
 
     def performCommand(self, inp, game_obj):
         cmd = inp.strip().split(":")
@@ -83,14 +82,14 @@ class Commands(object):
                     elif (target == "h" or target == "hero"):
                         game_obj.HERO.details()
                     else:
-                        print ("Unable to view details.")
+                        print("Unable to view details.")
                 else:
-                    print ("Specify target to view.")
+                    print("Specify target to view.")
             else:
-                print ("Invalid number of parameters specified.")
+                print("Invalid number of parameters specified.")
 
         elif (command == "flee"):
-            print ("You run away.")
+            print("You run away.")
 
         elif (command == "inv" or command == "i"):
             game_obj.HERO.show_inventory()
@@ -114,8 +113,6 @@ class Commands(object):
                     else:
                         print("Item does not exist in inventory.")
                 else:
-                    print ("Specify item to use.")
+                    print("Specify item to use.")
             else:
-                print ("Invalid number of parameters specified.")
-
-
+                print("Invalid number of parameters specified.")

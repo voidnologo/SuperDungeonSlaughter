@@ -82,6 +82,8 @@ class Hero(object):
         print("\t You heal {} - {} points when resting.".format(self.heal_min, self.heal_max))
 
     def details(self):
-        print ("\tName: {}\t Level: {}\t Max Hit points: {}\t Damage: {}-{}\t Rest: {}-{}".format(
-            self.name, self.level, self.hp_max, self.damage_min, self.damage_max, self.heal_min, self.heal_max
-        ))
+        print(
+            "\tName: {}\t Level: {}\t Max Hit points: {}\t Damage: {}-{}\t Rest: {}-{}".format(
+                self.name, self.level, self.hp_max, self.damage_min, self.damage_max, self.heal_min, self.heal_max
+            )
+        )

@@ -6,8 +6,8 @@ class Item(object):
         self.attributes = []
 
     def details(self):
-        print ("Name: " + self.name)
-        print ("Category: " + self.category)
+        print("Name: " + self.name)
+        print("Category: " + self.category)
         # print ("Actor: ", end='')
         # for i in self.actor:
         #     print ("\t" + i, end='')

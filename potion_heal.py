@@ -9,7 +9,7 @@ class Potion_heal(Item):
 
     def details(self):
         super().details()
-        print ("Action: Heals the hero for 50% hp")
+        print("Action: Heals the hero for 50% hp")
 
     def action(self, target):
         # if type(target) in self.actor:
