@@ -35,13 +35,13 @@ class Hero(object):
     # def add_item_to_inventory(self, item):
     #     self.inventory[item.name] = item
 
-    # def use_item_in_inventory(self, item):
-    #     if (item in self.inventory):
-    #         self.inventory[item].action(self)
-    #         if ("one_shot" in item.attributes):
-    #             self.remove_item_from_inventory(item)
-    #     else:
-    #         print("Item is not in inventory. Unable to use.")
+    def use_item_in_inventory(self, item):
+        if (item in self.inventory):
+            self.inventory[item].action(self)
+            if ("one_shot" in item.attributes):
+                self.remove_item_from_inventory(item)
+        else:
+            print("Item is not in inventory. Unable to use.")
 
     # def remove_item_from_inventory(self, item):
     #     if (item in self.inventory):
