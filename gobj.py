@@ -1,0 +1,3 @@
+MONSTER_DATA = None
+MONSTERS_BY_LEVEL = None
+HERO = None
