@@ -6,6 +6,8 @@ def initialize_hero():
     return {
         'name': name,
         'level': 1,
+        'hp_max': 10,
         'hp': 10,
-        'damage': 2
+        'damage_min': 2,
+        'damage_max': 5,
     }
