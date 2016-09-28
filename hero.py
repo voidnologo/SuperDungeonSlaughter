@@ -8,6 +8,10 @@ def initialize_hero():
         'level': 1,
         'hp_max': 10,
         'hp': 10,
-        'damage_min': 2,
-        'damage_max': 5,
+        'damage_min': 0,
+        'damage_max': 3,
+        'total_kills': 0,
+        'level_kills': 0,
+        'heal_min': 1,
+        'heal_max': 4,
     }

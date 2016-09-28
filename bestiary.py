@@ -20,6 +20,8 @@ def monsters_by_level(data):
 
 def make_a_monster(name, data):
     hp = int(random.gauss(data['avg_hp'], data['hp_sigma']))
+    if hp < 1:
+        hp = 1
     return {
         'name': name,
         'hp': hp,
