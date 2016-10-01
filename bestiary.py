@@ -2,35 +2,45 @@ from collections import defaultdict
 import random
 import simplejson as json
 
-import gobj
+
+class Bestiary():
+
+    def __init__(self):
+        self.bestiary = self.get_monster_data_from_file('monsters.json')
+        self.level_groups = self.monsters_by_level()
+
+    def get_monster_data_from_file(self, file_name):
+        with open(file_name, 'r') as f:
+            return json.loads(f.read())
+
+    def monsters_by_level(self):
+        by_levels = defaultdict(list)
+        for creature in self.bestiary:
+            for level in range(self.bestiary[creature]['min_level'], self.bestiary[creature]['max_level']):
+                by_levels[level].append(creature)
+        return by_levels
+
+    def get_a_monster_for_level(self, level):
+        monster = random.choice(self.level_groups[level])
+        return Monster(monster, self.bestiary[monster])
 
 
-def get_monster_data_from_file(file_name):
-    with open(file_name, 'r') as f:
-        return json.loads(f.read())
+class Monster():
 
+    def __init__(self, name, data):
+        hp = int(random.gauss(data['avg_hp'], data['hp_sigma']))
+        self.name = name
+        self.hp = hp if hp >= 1 else 1
+        self.hp_max = self.hp
+        self.damage_base = data['damage_base']
+        self.damage_sigma = data['damage_sigma']
 
-def monsters_by_level(data):
-    by_levels = defaultdict(list)
-    for creature in data:
-        for level in range(data[creature]['min_level'], data[creature]['max_level']):
-            by_levels[level].append(creature)
-    return by_levels
+    def attack(self, opponent):
+        damage = int(random.gauss(self.damage_base, self.damage_sigma))
+        opponent.hp -= damage
+        print('{} deals {} damage to {}!'.format(self.name, damage, opponent.name))
 
-
-def make_a_monster(name, data):
-    hp = int(random.gauss(data['avg_hp'], data['hp_sigma']))
-    if hp < 1:
-        hp = 1
-    return {
-        'name': name,
-        'hp': hp,
-        'hp_max': hp,
-        'damage_base': data['damage_base'],
-        'damage_sigma': data['damage_sigma'],
-    }
-
-
-def get_a_monster_for_level(level):
-    monster = random.choice(gobj.MONSTERS_BY_LEVEL[level])
-    return make_a_monster(monster, gobj.MONSTER_DATA[monster])
+    def __str__(self):
+        return '{} HP> {}/{} BaseDmg> {} DmgSigma> {}'.format(
+            self.name, self.hp, self.hp_max, self.damage_base, self.damage_sigma
+        )
