@@ -21,7 +21,6 @@ class Hero():
         opponent.hp -= damage
         print('{} deals {} damage to the {}!'.format(self.name, damage, opponent.name))
 
-
     def rest(self):
         heal = int(random.randint(self.heal_min, self.heal_max))
         self.hp += heal
