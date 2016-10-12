@@ -100,13 +100,10 @@ class GameLoop(cmd.Cmd):
             monster_hp=self.game.monster.hp,
             monster_max_hp=self.game.monster.hp_max,
         )
-
         prompt = '\n{hero_color}{hero_name}{end_color} - lvl: {hero_level} {hp_color}[{hero_hp}/{hero_max_hp}]{end_color}'  # noqa: 401
         prompt += ' .. vs .. {monster_color}{monster_name} [{monster_hp}/{monster_max_hp}]{end_color}'
         prompt += ' {prompt_color}#action > {end_color}'
-        prompt = prompt.format(**fmt)
-
-        return prompt
+        return prompt.format(**fmt)
 
     def initialize_game(self):
         self.game = Game()
