@@ -1,0 +1,90 @@
+{
+    "Goblin": {
+        "min_level": 0,
+        "max_level": 5,
+        "avg_hp": 5,
+        "hp_sigma": 0.5,
+        "damage_base": 2,
+        "damage_sigma": 1
+    },
+    "Orc": {
+        "min_level": 2,
+        "max_level": 8,
+        "avg_hp": 7,
+        "hp_sigma": 2,
+        "damage_base": 3,
+        "damage_sigma": 2
+    },
+    "Kobold": {
+        "min_level": 0,
+        "max_level": 4,
+        "avg_hp": 2,
+        "hp_sigma": 1,
+        "damage_base": 1,
+        "damage_sigma": 0.5
+    },
+    "Drake": {
+        "min_level": 3,
+        "max_level": 10,
+        "avg_hp": 9,
+        "hp_sigma": 3,
+        "damage_base": 5,
+        "damage_sigma": 2
+    },
+    "Werebat": {
+        "min_level": 0,
+        "max_level": 6,
+        "avg_hp": 3,
+        "hp_sigma": 1,
+        "damage_base": 3,
+        "damage_sigma": 1
+    },
+    "Lesser Dragon": {
+        "min_level": 6,
+        "max_level": 20,
+        "avg_hp": 13,
+        "hp_sigma": 4,
+        "damage_base": 7,
+        "damage_sigma": 4
+    },
+    "Rabid Wombat": {
+        "min_level": 3,
+        "max_level": 7,
+        "avg_hp": 5,
+        "hp_sigma": 3,
+        "damage_base": 5,
+        "damage_sigma": 1
+    },
+    "Greater Dragon": {
+        "min_level": 8,
+        "max_level": 30,
+        "avg_hp": 21,
+        "hp_sigma": 4,
+        "damage_base": 13,
+        "damage_sigma": 5
+    },
+    "Kitten": {
+        "min_level": 9,
+        "max_level": 15,
+        "avg_hp": 13,
+        "hp_sigma": 3,
+        "damage_base": 10,
+        "damage_sigma": 3
+    },
+    "Slime": {
+        "min_level": 0,
+        "max_level": 4,
+        "avg_hp": 5,
+        "hp_sigma": 2,
+        "damage_base": 2,
+        "damage_sigma": 1
+    },
+    "Undying": {
+        "min_level": 4,
+        "max_level": 8,
+        "avg_hp": 26,
+        "hp_sigma": 6,
+        "damage_base": 6,
+        "damage_sigma": 2
+    }
+}

@@ -1,19 +1,14 @@
-# for i in range(99):
-#     code = '\033[' + str(i) + 'm'
-#     print ('Code: \\033[' + str(i) + 'm = ' + code + 'COLOR' + '\033[0m')
-
-
 class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     FG_BLACK = '\033[30m'
     FG_RED = '\033[31m'
-    # FG_BOLD_RED = '\033[1;31m'
+    FG_BOLD_RED = '\033[1;31m'
     FG_GREEN = '\033[32m'
-    # FG_BOLD_GREEN = '\033[1;32m'
+    FG_BOLD_GREEN = '\033[1;32m'
     FG_YELLOW = '\033[33m'
-    # FG_BOLD_YELLOW = '\033[1;33m'
+    FG_BOLD_YELLOW = '\033[1;33m'
     FG_BLUE = '\033[34m'
     FG_MAGENTA = '\033[35m'
     FG_CYAN = '\033[36m'
