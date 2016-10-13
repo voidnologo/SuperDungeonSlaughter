@@ -67,6 +67,7 @@ class GameLoop(cmd.Cmd):
     def lose_game(self):
         print("\n\tYou died!  And you only managed to kill {} monsters.".format(self.game.hero.total_kills))
         print("\tBetter luck next time.\n\n")
+        return True
 
     def monster_died(self):
         if self.game.monster.hp <= 0:
