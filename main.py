@@ -43,6 +43,7 @@ class GameLoop(cmd.Cmd):
     def do_quit(self, args):
         "Quit - lose everything!"
         print('quit')
+        return True
 
     def do_l(self, args):
         "Look {target}"
