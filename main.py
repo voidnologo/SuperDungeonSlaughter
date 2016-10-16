@@ -62,13 +62,13 @@ class GameLoop(cmd.Cmd):
     def postcmd(self, stop, line):
         if self.game.hero.hp <= 0:
             self.lose_game()
+            return True
         if self.monster_died():
             self.game.hero.level_up()
 
     def lose_game(self):
         print("\n\tYou died!  And you only managed to kill {} monsters.".format(self.game.hero.total_kills))
         print("\tBetter luck next time.\n\n")
-        return True
 
     def monster_died(self):
         if self.game.monster.hp <= 0:
