@@ -18,20 +18,20 @@ class GameLoop(cmd.Cmd):
         self.initialize_game()
 
     def do_f(self, args):
-        "Fight"
+        "Fight! Attack the monster! Beware, it will fight back!"
         self.do_fight(args)
 
     def do_fight(self, args):
-        "Fight"
+        "Fight! Attack the monster! Beware, it will fight back!"
         self.game.hero.attack(self.game.monster)
         self.game.monster.attack(self.game.hero)
 
     def do_r(self, args):
-        "Rest"
+        "Rest. Regain some hit points. Watch out, the monster will still fight!"
         self.do_rest(args)
 
     def do_rest(self, args):
-        "Rest"
+        "Rest. Regain some hit points. Watch out, the monster will still fight!"
         self.game.hero.rest()
         self.game.monster.attack(self.game.hero)
 
