@@ -2,11 +2,14 @@ from collections import defaultdict
 import random
 import simplejson as json
 
+from utils import data_file_path
+
 
 class Bestiary():
 
     def __init__(self):
-        self.bestiary = self.get_monster_data_from_file('monsters.json')
+        fpath = data_file_path('monsters.json')
+        self.bestiary = self.get_monster_data_from_file(fpath)
         self.level_groups = self.monsters_by_level()
 
     def get_monster_data_from_file(self, file_name):

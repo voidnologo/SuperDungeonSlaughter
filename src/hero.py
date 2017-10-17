@@ -35,8 +35,8 @@ class Hero():
             self.level_kills = 0
             self.damage_min += 1 if self.damage_min == 0 else int(math.ceil(self.damage_min * 0.1))
             self.damage_max += 1 if self.damage_max == 0 else int(math.ceil(self.damage_max * 0.1))
-            self.heal_min += 1 if self.heal_min == 0 else int(math.ceil(self.heal_min * 0.1))
-            self.heal_max += 1 if self.heal_max == 0 else int(math.ceil(self.heal_max * 0.1))
+            self.heal_min += 1 if self.heal_min == 0 else int(math.ceil(self.heal_min * 0.15))
+            self.heal_max += 1 if self.heal_max == 0 else int(math.ceil(self.heal_max * 0.15))
             print("\nYou gained a level!\n")
             print("\t You are now level: {}".format(self.level))
             print("\t You now have {} max hp.".format(self.hp_max))
