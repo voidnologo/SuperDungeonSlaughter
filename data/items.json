@@ -1,0 +1,8 @@
+{
+    "sword": {
+        "name": "sword",
+        "description": "Glistening, razor sharp sword",
+        "category": "weapon",
+        "effect": "hero:damage_min>+10%;damage_max>+10%"
+    }
+}
