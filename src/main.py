@@ -2,6 +2,9 @@ import cmd
 from bisect import bisect
 
 from colors import bcolors
+from score import get_high_scores, write_score
+from utils import ask_yn_question
+
 from gobj import Game
 
 
@@ -37,12 +40,14 @@ class GameLoop(cmd.Cmd):
 
     def do_escape(self, args):
         "Leave the game with your current score"
-        print('escape')
-        pass
+        if ask_yn_question('Are you sure you wish to quit with your score?'):
+            write_score(self.game.hero)
+            print(get_high_scores())
+            return True
 
     def do_quit(self, args):
         "Quit - lose everything!"
-        print('quit')
+        print('You are about to lose everything!')
         return True
 
     def do_l(self, args):
@@ -58,6 +63,10 @@ class GameLoop(cmd.Cmd):
             print(self.game.monster)
         else:
             print("You can't see that.'")
+
+    def do_scores(self, args):
+        "Show high scores"
+        print(get_high_scores())
 
     def postcmd(self, stop, line):
         if self.game.hero.hp <= 0:
