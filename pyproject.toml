@@ -5,17 +5,18 @@ build-backend = "hatchling.build"
 [project]
 name = "super-dungeon-slaughter"
 version = "0.1.0"
-description = "Super Dungeon Slaughter game"
+description = "Super Dungeon Slaughter - A text-based dungeon crawler RPG"
 requires-python = ">=3.13"
-dependencies = [
-    "simplejson",
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
     "ruff",
     "isort",
 ]
+
+[project.scripts]
+dungeon = "src.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
