@@ -4,7 +4,6 @@ from score import format_high_scores
 
 
 class ScoreTest(unittest.TestCase):
-
     def test_scores_properly_sorts_and_formats(self):
         raw_scores = [
             {'name': 'frank', 'level': 3, 'kills': 2},

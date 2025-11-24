@@ -1,5 +1,4 @@
-from os.path import abspath, join, dirname
-
+from os.path import abspath, dirname, join
 
 INPUT_PROMPT = '\n{} >> '
 PROJECT_ROOT = abspath(join(dirname(__file__), '..'))
@@ -13,7 +12,7 @@ def ask_question(verbiage):
 def ask_yn_question(prompt):
     choice = None
     while choice not in ['y', 'n']:
-        choice = input('\n{} (y/n) >>> '.format(prompt)).lower()
+        choice = input(f'\n{prompt} (y/n) >>> ').lower()
     return choice == 'y'
 
 

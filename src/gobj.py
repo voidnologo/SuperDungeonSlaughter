@@ -3,8 +3,7 @@ from hero import Hero
 from utils import ask_question
 
 
-class Game():
-
+class Game:
     def __init__(self):
         self.bestiary = Bestiary()
         name = ask_question("What is your hero's name?'")

@@ -1,19 +1,19 @@
-from collections import defaultdict
 import random
+from collections import defaultdict
+
 import simplejson as json
 
 from utils import data_file_path
 
 
-class Bestiary():
-
+class Bestiary:
     def __init__(self):
         fpath = data_file_path('monsters.json')
         self.bestiary = self.get_monster_data_from_file(fpath)
         self.level_groups = self.monsters_by_level()
 
     def get_monster_data_from_file(self, file_name):
-        with open(file_name, 'r') as f:
+        with open(file_name) as f:
             return json.loads(f.read())
 
     def monsters_by_level(self):
@@ -28,8 +28,7 @@ class Bestiary():
         return Monster(monster, self.bestiary[monster])
 
 
-class Monster():
-
+class Monster:
     def __init__(self, name, data):
         hp = int(random.gauss(data['avg_hp'], data['hp_sigma']))
         self.name = name
@@ -41,9 +40,7 @@ class Monster():
     def attack(self, opponent):
         damage = int(random.gauss(self.damage_base, self.damage_sigma))
         opponent.hp -= damage
-        print('{} deals {} damage to {}!'.format(self.name, damage, opponent.name))
+        print(f'{self.name} deals {damage} damage to {opponent.name}!')
 
     def __str__(self):
-        return '{} HP> {}/{} BaseDmg> {} DmgSigma> {}'.format(
-            self.name, self.hp, self.hp_max, self.damage_base, self.damage_sigma
-        )
+        return f'{self.name} HP> {self.hp}/{self.hp_max} BaseDmg> {self.damage_base} DmgSigma> {self.damage_sigma}'

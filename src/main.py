@@ -2,16 +2,13 @@ import cmd
 from bisect import bisect
 
 from colors import bcolors
+from gobj import Game
 from score import get_high_scores, write_score
 from utils import ask_yn_question
 
-from gobj import Game
-
 
 class GameLoop(cmd.Cmd):
-    welcome = "{}{}{} Welcome to Super Dungeon Slaughter! {}\n\n".format(
-        bcolors.BOLD, bcolors.UNDERLINE, bcolors.BG_RED, bcolors.ENDC
-    )
+    welcome = f'{bcolors.BOLD}{bcolors.UNDERLINE}{bcolors.BG_RED} Welcome to Super Dungeon Slaughter! {bcolors.ENDC}\n\n'
     doc_header = 'Commands'
     undoc_header = 'No help available'
     ruler = '-'
@@ -76,16 +73,16 @@ class GameLoop(cmd.Cmd):
             self.game.hero.level_up()
 
     def lose_game(self):
-        print("\n\tYou died!  And you only managed to kill {} monsters.".format(self.game.hero.total_kills))
-        print("\tBetter luck next time.\n\n")
+        print(f'\n\tYou died!  And you only managed to kill {self.game.hero.total_kills} monsters.')
+        print('\tBetter luck next time.\n\n')
 
     def monster_died(self):
         if self.game.monster.hp <= 0:
             self.game.hero.total_kills += 1
             self.game.hero.level_kills += 1
-            print("\nCongratulations!  You killed the {}!".format(self.game.monster.name))
-            print("\tYou have killed {} monsters.".format(self.game.hero.total_kills))
-            print("\tPrepare for your next fight!\n")
+            print(f'\nCongratulations!  You killed the {self.game.monster.name}!')
+            print(f'\tYou have killed {self.game.hero.total_kills} monsters.')
+            print('\tPrepare for your next fight!\n')
             self.game.monster = self.game.bestiary.get_a_monster_for_level(self.game.hero.level)
             return True
         return False
@@ -111,7 +108,9 @@ class GameLoop(cmd.Cmd):
             monster_hp=self.game.monster.hp,
             monster_max_hp=self.game.monster.hp_max,
         )
-        prompt = '\n{hero_color}{hero_name}{end_color} - lvl: {hero_level} {hp_color}[{hero_hp}/{hero_max_hp}]{end_color}'  # noqa: 401
+        prompt = (
+            '\n{hero_color}{hero_name}{end_color} - lvl: {hero_level} {hp_color}[{hero_hp}/{hero_max_hp}]{end_color}'  # noqa: 401
+        )
         prompt += ' .. vs .. {monster_color}{monster_name} [{monster_hp}/{monster_max_hp}]{end_color}'
         prompt += ' {prompt_color}#action > {end_color}'
         return prompt.format(**fmt)
@@ -120,5 +119,5 @@ class GameLoop(cmd.Cmd):
         self.game = Game()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     GameLoop().cmdloop()
