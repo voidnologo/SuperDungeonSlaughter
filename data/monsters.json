@@ -28,7 +28,7 @@
         "max_level": 10,
         "avg_hp": 9,
         "hp_sigma": 3,
-        "damage_base": 5,
+        "damage_base": 3,
         "damage_sigma": 2
     },
     "Werebat": {
